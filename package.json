@@ -43,6 +43,7 @@
   },
   "files": [
     "lib",
+    "mocks.js",
     "examples",
     "LICENSE",
     "README.md"
