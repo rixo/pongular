@@ -15,7 +15,7 @@ First setup the module.
 
 ```js
 
-var pongular = require('pongular').pongular;
+var pongular = require('pongular');
 
 var module = pongular.module('themodule', []);
 
@@ -136,8 +136,8 @@ Of course Dependecy Injection is only mildly useful until you start writing test
 In your specs require pongular and pongular-mocks first, and then setup the module before requiring the module under test. An extra method `isModuleDefined` enables you to only setup the module once per test run :
 
 ```js
-  var pongular = require('pongular').pongular,
-      mocks = require('pongular/lib/pongular-mocks');
+  var pongular = require('pongular'),
+      mocks = require('pongular').mocks;
 
   if (!pongular.isModuleDefined('mongle')) pongular.module('mongle', []);
   require('../app/controllers/RSSCtrl');
@@ -155,8 +155,8 @@ The full test looks like :
 ```js
 describe('RSS controller', function() {
 
-  var pongular = require('pongular').pongular,
-      mocks = require('pongular/lib/pongular-mocks');
+  var pongular = require('pongular'),
+      mocks = require('pongular').mocks;
 
   if (!pongular.isModuleDefined('themodule')) pongular.module('themodule', []);
   require('../app/controllers/RSSCtrl');
@@ -182,4 +182,3 @@ describe('RSS controller', function() {
   });
 });
 ```
-
