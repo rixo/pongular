@@ -1,3 +1,8 @@
 'use strict';
 
-module.exports = require('./lib/pongular-mocks');
+var mocks = require('./lib/pongular-mocks');
+
+module.exports = mocks;
+
+global.ngModule = mocks.module;
+global.inject = mocks.inject;
